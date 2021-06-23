@@ -45,8 +45,10 @@ const containsAnd = (arr) => {
   // Solution code here...
   let newArray = [];
   let oddnumber = arr.filter(function (val, idx) {
-    if (val != 'ran')
+    if (val !== 'ran'){
       newArray.push(oddnumber)
+    }
+      
   })
   return newArray
 };
