@@ -226,7 +226,7 @@ const extractStats = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-TESTS
+TESTSs
 
 All the code below will verify that your functions are working to solve the challenges.
 
