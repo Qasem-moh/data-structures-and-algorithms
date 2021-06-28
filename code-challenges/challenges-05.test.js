@@ -2,6 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
+
 Write a function that iterates over an array of people objects
 and creates a new list of each person's full name using the array method 'map'.
 Each object will have the shape {firstName:string, lastName:string}
@@ -12,71 +13,71 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
-  // let newArray ='';
-  // newArray = people.map();
-  // let newPerson = people.reduce( (accumulator, person) => {
-  //   accumulator[newArray.firstName] = newArray.lastName;
-  //   return accumulator;
-  // }, {} );
-  // return newPerson;
 
-  let newArray = [];
-  people.map(value => {
-    newArray.push(value.firstName +' '+value.lastName);
+  let ae = people.map((val, idx) => {
+    let firstName = val.firstName;
+    let last = val.lastName
+    return firstName + " " + last
   })
-  return newArray;
-
+  return ae
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
+
 Write a function named addValues that, given an array of numbers as input, uses reduce to add the values in the array.
+
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
   // Solution code here...
-  // let newArray = [];
-  // let reduceArray = arr.reduce((x,y)=>{
-  //   newArray.push(x=x+y);
-  // },0);
-  // return newArray;
-  return arr.reduce((acc, val) => {
-    return acc += val
+
+  let ae = arr.reduce((accurement, value) => {
+    accurement = accurement + value
+    return accurement
   }, 0)
+  return ae
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
+
 Write a function named addPurchases that, given an array of objects as input, uses reduce to find the total amount purchased. Each object contains the keys `item` and `purchasePrice` like the example.
+
 {
   item: 'switch'
   purchasePrice: 399
 }
+
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
   // Solution code here...
-  return arr.reduce((addpur,val)=>{
-    return addpur=addpur+val.purchasePrice;
-  },0)
-  
+  let container={}
+  let ae=arr.reduce((accurement,value)=>{
+    container[accurement.item] = accurement.item
+    container[accurement.purchasePrice] = accurement.purchasePrice
+    
+    return container
+  })
+  return ae
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
+
 Write a function named countNumberOfElements that, given an array as input, uses reduce to count the number of elements in the array.
+
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  return arr.reduce((val)=>{
-    return ++val;
-  },0)
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
+
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
@@ -98,7 +99,8 @@ let starWarsData = [{
   skin_color: 'gold',
   eye_color: 'yellow',
   birth_year: '112BBY',
-  gender: 'n/a'},
+  gender: 'n/a'
+},
 {
   name: 'R2-D2',
   height: '96',
@@ -132,34 +134,23 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  // let newArray =[];
-  // let readucFun = arr.reduce((val)=>
-  // {return newArray.push(val.name)},'')
-  // return newArray;
-  const newArray = arr.reduce((acc, val) => {
-    acc.push(val.name);
-    return acc;
-  }, [])
-  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
+
 Write a function named reversedString that takes in a string and returns a string with the letters in reverse order.
+
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
   // Solution code here...
-  let array = str.split('');
-  return array.reduce((newStr, curLetter) =>
-   {
-    return curLetter + newStr
-  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
+
 Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
 ------------------------------------------------------------------------------------------------ */
 
@@ -212,7 +203,9 @@ const countNumberOfChildren = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
+
 Write a function that, given an array of numbers as input, uses reduce to calculate the array's average value.
+
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
@@ -222,7 +215,9 @@ const calculateAverage = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
+
 Write a function named countPrimeNumbers that, given an array elements as input, uses reduce to count the number of elements that are prime numbers.
+
 You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
@@ -241,7 +236,9 @@ const countPrimeNumbers = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
+
 Write a function named extractState that, given the snorlaxData, below, uses reduce to return the object whose 'name' property matches the given string.
+
 If the input array does not have a stat with that specific name, the function should return null.
 ------------------------------------------------------------------------------------------------ */
 
@@ -282,8 +279,11 @@ const extractStat = (statName, arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
+
 Write a function named extractChildren that, given the array of characters from challenge 4, accomplishes the following:
+
 1) Uses filter to return an array of the characters that contain the letter 'a' in their name
+
 2) Then, uses reduce to return an array of all the children's names in the filtered array
 ------------------------------------------------------------------------------------------------ */
 
@@ -293,8 +293,11 @@ const extractChildren = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
+
 All the code below will verify that your functions are working to solve the challenges.
+
 DO NOT CHANGE any of the below code.
+
 Run your tests from the console: jest challenges-09.test.js
 ------------------------------------------------------------------------------------------------ */
 
@@ -318,7 +321,7 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should add the purchase price', () => {
-    expect(addPurchases([{item: 'switch', purchasePrice: 399}, {item: 'toothpaste', purchasePrice: 2}])).toStrictEqual(401);
+    expect(addPurchases([{ item: 'switch', purchasePrice: 399 }, { item: 'toothpaste', purchasePrice: 2 }])).toStrictEqual(401);
     expect(addPurchases([])).toStrictEqual(0);
   });
 });
@@ -331,7 +334,7 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should return an array continaing the names of the characters', () => {
-    expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]);
+    expect(returnNames(starWarsData)).toStrictEqual(['Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa']);
     expect(returnNames(starWarsData).length).toStrictEqual(5);
   });
 });
@@ -350,7 +353,7 @@ xdescribe('Testing challenge 7', () => {
 
 xdescribe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
-    expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
+    expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85])).toStrictEqual(64);
   });
 });
 
@@ -368,7 +371,7 @@ xdescribe('Testing challenge 10', () => {
 
 xdescribe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
-    expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
+    expect(extractChildren(characters)).toStrictEqual(['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras']);
     expect(extractChildren(characters).length).toStrictEqual(10);
   });
 });
