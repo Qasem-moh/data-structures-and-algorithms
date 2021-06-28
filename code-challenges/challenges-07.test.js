@@ -2,7 +2,6 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
-
 Write a function called sortStarWarsCharacters that sorts the characters in the starWarsPeople array by height from tallest to shortest.
 ------------------------------------------------------------------------------------------------ */
 
@@ -26,38 +25,38 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  return starWarsPeople.sortBy('name')
+  starWarsArr.sort((c1,c2)=>{
+    return parseInt(c2['height'])-parseInt(c1['height']);
+  });
+  return starWarsArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
   // Solution code here...
+  arr.splice(idx,3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
   // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
 Write a function named howMuchPencil that takes in a string, as written on the side of a pencil.
-
 As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
-
 Your function should use slice within a loop and return an array of each successive string result from losing letters to the sharpener, until nothing is left.
-
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
@@ -65,31 +64,29 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i=0;i<=str.length;i++){
+    result.push(str.slice(i));
+  }
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
 Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
-
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
 You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
-
 Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
-
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
-
 Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
@@ -125,14 +122,16 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  for (let index = 0; index < recipe.ingredients.length; index++) {
+    let spaces = recipe.ingredients[index].indexOf(' ', 6);
+    result.push(recipe.ingredients[index].slice(spaces + 1));
+}
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
-
 Write a function named splitFoods that uses split to produce the same output as Challenge 3.
-
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
@@ -144,11 +143,8 @@ const splitFoods = (recipe) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
-
 Use the same recipe from Challenge 3, above.
-
 Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. Fortunate for you, the action verbs are the first word of each action.
-
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
@@ -160,11 +156,8 @@ const stepActions = (recipe) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
-
 Write a function named removeEvenValues that, given an array of integers as input, deletes all even values from the array, leaving no 'gaps' behind.
-
 The array should be modified in-place.
-
 For example:
   const integers = [1, 2, 3, 4, 5, 6];
   removeEvenValues(integers);
@@ -177,13 +170,9 @@ const removeEvenValues = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
 Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
-
 If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
-
 If the numberOfCharacters argument input is a negative number, the function should return the input string without any changes.
-
 For example:
 removeLastCharacters('Gregor', 2) returns 'Greg'
 removeLastCharacters('Gregor', -2) returns 'Gregor'
@@ -197,7 +186,6 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
-
 Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
 
@@ -210,9 +198,7 @@ const totalSumCSV = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
-
 Write a function named removeVowels that takes in a string and returns a new string where all the vowels of the original string have been removed.
-
 For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
@@ -222,11 +208,8 @@ const removeVowels = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 13 - Stretch Goal
-
 Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
-
 For example, extractVowels('gregor') returns ['grgr', 'eo'].
-
 Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioou']
 ------------------------------------------------------------------------------------------------ */
 
@@ -236,13 +219,9 @@ const extractVowels = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
 All the code below will verify that your functions are working to solve the challenges.
-
 DO NOT CHANGE any of the below code.
-
 Run your tests from the console: jest challenges-05.test.js
-
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
