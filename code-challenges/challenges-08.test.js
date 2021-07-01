@@ -52,10 +52,10 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  const value = (x, y) => {
+  const sor = (x, y) => {
     return x.children.length - y.children.length;
   }
-  charArray.sort(value);
+  charArray.sort(sor);
   return charArray;
 };
 
