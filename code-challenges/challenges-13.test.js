@@ -8,16 +8,16 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
   // Solution code here...
-  let index = null;
+  let val = null;
   if (arr.length > 0) {
-    let str = arr.reduce((a, b) => {
+    let stri = arr.reduce((a, b) => {
       return a.length > b.length ? a : b;
     });
-    index = arr.indexOf(str);
+    val = arr.indexOf(stri);
   } else {
-    index = -1;
+    val = -1;
   }
-  return index;
+  return val;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,8 +30,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-  let firstLetter = arr.map((letter) => letter[0]);
-  return firstLetter;
+  let firstLet = arr.map((letter) => letter[0]);
+  return firstLet;
 };
 
 /* ------------------------------------------------------------------------------------------------
