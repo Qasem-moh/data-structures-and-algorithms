@@ -166,6 +166,10 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+var oddNumbers = numbers.filter(function(item) {
+   return (item % 2 == 1);
+});
+  return oddNumbers
 };
 
 /* ------------------------------------------------------------------------------------------------
