@@ -42,14 +42,14 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
+const findHap = (arr) => {
   // Solution code here...
-  let find = /^:\)/g;
+  let find1 = /^:\)/g;
   let find2 = /:\)/g;
-  let match = arr.filter((e) => {
-    if (find.test(e) || find2.test(e)) return e;
+  let matchVal = arr.filter((e) => {
+    if (find1.test(e) || find2.test(e)) return e;
   });
-  return match;
+  return matchVal;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,11 +62,11 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
-  let val = arr.map((num) => {
-    let newVal = num.replace(/\D/g, "");
-    return newVal;
+  let valu = arr.map((num1) => {
+    let newValu = num1.replace(/\D/g, "");
+    return newValu;
   });
-  return val;
+  return valu;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,16 +79,16 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
-   let find = /^:\)/g;
+   let find1 = /^:\)/g;
    let find2 = /:\)/g;
    let check = false;
 
-   let match = arr.filter((e) => {
-     if (find2.test(e) || find.test(e)) {
+   let matched = arr.filter((e) => {
+     if (find2.test(e) || find1.test(e)) {
        return e;
      }
    });
-   if (match.length === arr.length) {
+   if (matched.length === arr.length) {
      check = true;
    } else {
      check = false;
