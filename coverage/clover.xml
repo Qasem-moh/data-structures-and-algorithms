@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628192699390" clover="3.2.0">
-  <project timestamp="1628192699390" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1628540643997" clover="3.2.0">
+  <project timestamp="1628540643997" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3" elements="19" coveredelements="19" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
+    <file name="array-shift.js" path="/home/qasem/Documents/data-structures-and-algorithms/code-challenges-401/ArrayShift/array-shift.js">
+      <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="21" count="5" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+    </file>
   </project>
 </coverage>
