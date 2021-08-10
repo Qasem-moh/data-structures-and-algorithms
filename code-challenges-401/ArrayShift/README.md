@@ -8,6 +8,6 @@
 
 **Solution**:
 
-*run: npm test array-shift-method*
+*run: npm test array-shift*
 
 ![arrayShift img](https://i.ibb.co/WF0MNd3/shift.png)
