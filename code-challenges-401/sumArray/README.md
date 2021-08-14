@@ -9,6 +9,8 @@ Given a matrix, find the sum of each row.
 
 ## Approach & Efficiency
 this Approach is Efficient to sum any rows of matrix
+
+npm test sumArray
 ## Solution
  
 ![](https://i.ibb.co/5WYQ6kH/ch04.png)
