@@ -12,14 +12,14 @@ class LinkedList {
     }
     append(value) {
         let node = new Node(value);
-        if (!this.head) {//LL empty
+        if (!this.head) {
             this.head = node;
-        } else { //LL not empty add in the end
+        } else { 
             let currentNode = this.head;
             while (currentNode.next) {
-                currentNode = currentNode.next; //move forward, change pointer
+                currentNode = currentNode.next; r
             }
-            currentNode.next = node; //reach tail(null)empty
+            currentNode.next = node; 
         }
     }
     insertAfter(value, newVal) {
@@ -67,15 +67,6 @@ class LinkedList {
 }
 
 let newNode = new LinkedList();
-
-newNode.append(10),
-    newNode.append(20),
-    newNode.append(30),
-    newNode.append(40),
-    newNode.append(50),
-    newNode.append(60),
-
-
 
 
     module.exports = LinkedList;

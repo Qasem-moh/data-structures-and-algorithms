@@ -13,3 +13,6 @@
 **Solution**:
 
 *run: npm test linked-list*
+
+
+![](https://i.ibb.co/sgJ3cV4/5555.png)
