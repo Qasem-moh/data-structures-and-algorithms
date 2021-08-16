@@ -1,5 +1,5 @@
 'use strict';
-const lL = require('./ll-kth-from-end');
+const lL = require('./kth-from-end');
 
 let newLl = new lL();
 

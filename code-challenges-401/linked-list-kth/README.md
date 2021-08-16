@@ -12,7 +12,7 @@
 
 **Solution**:
 
-*run: npm test linked-list*
+*run: npm test kth-from-end.test.js*
 
 
 ![](https://i.ibb.co/sgJ3cV4/5555.png)
