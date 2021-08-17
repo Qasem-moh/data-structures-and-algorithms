@@ -12,3 +12,5 @@ O(n)
 O(1)
 ## Solution
 * test the unit: ``npm test zip.test.js``
+
+![](https://i.ibb.co/84ZL3GX/test.png)
