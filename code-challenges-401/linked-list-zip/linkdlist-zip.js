@@ -12,14 +12,14 @@ class linkedList {
     }
     append(value) {
         let node = new Node(value);
-        if (!this.head) {//LL empty
+        if (!this.head) {
             this.head = node;
-        } else { //LL not empty add in the end
+        } else {
             let currentNode = this.head;
             while (currentNode.next) {
-                currentNode = currentNode.next; //move forward, change pointer
+                currentNode = currentNode.next; 
             }
-            currentNode.next = node; //reach tail(null)empty
+            currentNode.next = node; 
         }
     }
     insertAfter(value, newVal) {
