@@ -11,4 +11,4 @@ Solution:
 
 run: npm test animal-shelter
 
-![](https://i.ibb.co/b2dqV29/carbon-2.png)
+![](https://i.ibb.co/3FrkVb7/ewertyu.png)
