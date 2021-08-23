@@ -1,6 +1,6 @@
 'use strict';
 
-const AnimalShelter = require('./fifo-animal-shelter');
+const AnimalShelter = require('./animal-shelter');
 
 const Animal1 = {
     type: 'cat',
