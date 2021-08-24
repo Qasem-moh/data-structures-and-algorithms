@@ -3,7 +3,7 @@
 
 const Stack = require('./stacks-and-queues').Stack;
 
-function multiBracketValidation(string) {
+function bracket(string) {
     if (!string) return false;
 
     let bracketsArray = [];
@@ -41,5 +41,5 @@ function multiBracketValidation(string) {
 }
 
 module.exports = {
-    multiBracketValidation
+    bracket
 };
