@@ -1,7 +1,5 @@
 # multiBracketValidation
 
-[**multiBracketValidation**](./multi-bracket-validation.js)
-
 **Challenge**:
 - Write a function that checks if the brackets are balanced or not.
 
