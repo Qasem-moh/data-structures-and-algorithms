@@ -15,4 +15,4 @@
 
 *run: npm test multi-bracket-validation*
 
-![multiBracketValidation]()
+![multiBracketValidation](https://i.ibb.co/CW0h1HN/0121.png)
