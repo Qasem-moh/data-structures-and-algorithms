@@ -24,7 +24,7 @@ class Stack {
 }
 
 
-module.exports = Stack;
+module.exports = {Stack};
 console.log(' on stack ');
 const stack = new Stack();
 stack.push(5);
