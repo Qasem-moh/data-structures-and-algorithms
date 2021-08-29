@@ -1,81 +1,74 @@
-'use strict';
+"use strict";
 
-const Node = require('./queue');
-const stack = require('./stack');
+const BinaryTree = require("./binary-search-tree");
 
-describe('test', () => {
-    it('push Queue', () => {
-        let QueueL = new Queue();
-        QueueL.push(2);
-        expect(QueueL.peek()).toEqual([2])
-    })
-    it('pop Queue', () => {
-        let QueueL = new Queue();
-        QueueL.pop();
-        expect(QueueL.pop()).toEqual('exption')
-    })
-    it('push Queue', () => {
-        let QueueL = new Queue();
-        QueueL.push(2);
-        QueueL.push(3);
-        expect(QueueL.peek()).toEqual([2, 3])
-    })
-    it('push Queue', () => {
-        let QueueL = new Queue();
-        QueueL.push(2);
-        QueueL.push(5);
-        QueueL.push(3);
-        QueueL.pop();
-        expect(QueueL.peek()).toEqual([5, 3])
-    })
-    it('push Queue', () => {
-        let QueueL = new Queue();
-        QueueL.push(2);
-        QueueL.push(5);
-        QueueL.push(3);
-        expect(QueueL.isEmpty()).toEqual(false)
-    })
-    it('push Queue', () => {
-        let QueueL = new Queue();
-        expect(QueueL.isEmpty()).toEqual(true)
-    })
-})
-/******************************************************* */
+describe("Binary Search Tree", () => {
 
-describe('test stack', () => {
-    it('push stack', () => {
-        let stackL = new stack();
-        stackL.push(2);
-        expect(stackL.peek()).toEqual([2])
+    it("Can successfully instantiate an empty tree", () => {
+        let tree = new BinaryTree();
+        expect(tree.root).toEqual(null);
+    });
+
+    it("Can successfully instantiate a tree with a single root node", () => {
+        let tree = new BinaryTree();
+        tree.add('a');
+        expect(tree.root.value).toEqual('a');
+        expect(tree.contains('a')).toEqual(true);
     })
-    it('pop stack', () => {
-        let stackL = new stack();
-        stackL.pop();
-        expect(stackL.pop()).toEqual('exption')
+
+    it("Can successfully add a left child and right child to a single root node", () => {
+        let tree = new BinaryTree();
+        tree.add(6);
+        tree.add(5);
+        tree.add(7);
+        expect(tree.root.value).toEqual(6);
+        expect(tree.root.left.value).toEqual(5);
+        expect(tree.root.right.value).toEqual(7);
     })
-    it('push stack', () => {
-        let stackL = new stack();
-        stackL.push(2);
-        stackL.push(3);
-        expect(stackL.peek()).toEqual([2, 3])
+    it("Can successfully return a collection from a preorder traversal", () => {
+        let expextedValue = [20, 11, 3, 9, 14, 31, 62, 57, 72, 88]
+        let tree = new BinaryTree();
+        tree.add(20)
+        tree.add(31)
+        tree.add(11)
+        tree.add(3)
+        tree.add(9)
+        tree.add(62)
+        tree.add(57)
+        tree.add(72)
+        tree.add(14)
+        tree.add(88)
+        expect(tree.preOrder()).toEqual(expextedValue);
     })
-    it('push stack', () => {
-        let stackL = new stack();
-        stackL.push(2);
-        stackL.push(5);
-        stackL.push(3);
-        stackL.pop();
-        expect(stackL.peek()).toEqual([2, 5])
+    it("Can successfully return a collection from an inorder traversal", () => {
+        let expextedValue = [3, 9, 11, 14, 20, 31, 57, 62, 72, 90]
+        let tree = new BinaryTree();
+        tree.add(20)
+        tree.add(31)
+        tree.add(11)
+        tree.add(3)
+        tree.add(9)
+        tree.add(62)
+        tree.add(57)
+        tree.add(72)
+        tree.add(14)
+        tree.add(90)
+        expect(tree.inOrder()).toEqual(expextedValue);
     })
-    it('push stack', () => {
-        let stackL = new stack();
-        stackL.push(2);
-        stackL.push(5);
-        stackL.push(3);
-        expect(stackL.isEmpty()).toEqual(false)
+    it("Can successfully return a collection from a postorder traversal", () => {
+        let expextedValue = [9, 3, 14, 11, 57, 90, 72, 62, 31, 20]
+        let tree = new BinaryTree();
+        tree.add(20)
+        tree.add(31)
+        tree.add(11)
+        tree.add(3)
+        tree.add(9)
+        tree.add(62)
+        tree.add(57)
+        tree.add(72)
+        tree.add(14)
+        tree.add(90)
+        expect(tree.postOrder()).toEqual(expextedValue);
     })
-    it('push stack', () => {
-        let stackL = new stack();
-        expect(stackL.isEmpty()).toEqual(true)
-    })
-})
+
+});
