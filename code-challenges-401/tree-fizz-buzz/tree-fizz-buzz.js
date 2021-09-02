@@ -36,15 +36,12 @@ class K_aryTree {
     // should return new tree
     fizzBuzzTree() {
         const newTree = new K_aryTree();
-        // newTree.root = { ...this.root }; // did not deep clone
-        // newTree.root = Object.assign({}, this.root); // did not deep clone
         newTree.root = JSON.parse(JSON.stringify(this.root));
         const queue = new Queue();
         queue.enqueue(newTree.root);
 
-        while (queue.size) { // similar to array.length
-            let current = queue.dequeue().value; // added .value here to access the object that contains the node
-
+        while (queue.size) { 
+            let current = queue.dequeue().value; 
             if (current.value % 3 === 0 && current.value % 5 === 0) {
                 current.value = 'FizzBuzz';
             } else if (current.value % 3 === 0) {
