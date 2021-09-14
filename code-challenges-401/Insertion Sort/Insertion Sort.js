@@ -10,6 +10,4 @@ const insertion_Sort = (arr) => {
     }
     return arr;
 };
-// const arr = [7,5,4,6,3,4,1];
-// console.log(insertion_Sort (arr));
 module.exports = insertion_Sort;
