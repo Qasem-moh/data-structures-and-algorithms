@@ -29,7 +29,6 @@ function quickSort(items, left, right) {
     if (items.length > 1) {
         index = partition(items, left, right); //index returned from partition
         if (left < index - 1) {
-            //more elements on the left side of the pivot
             quickSort(items, left, index - 1);
         }
         if (index < right) {
