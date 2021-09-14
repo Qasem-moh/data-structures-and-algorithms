@@ -27,7 +27,7 @@ function partition(items, left, right) {
 function quickSort(items, left, right) {
     let index;
     if (items.length > 1) {
-        index = partition(items, left, right); //index returned from partition
+        index = partition(items, left, right); 
         if (left < index - 1) {
             quickSort(items, left, index - 1);
         }
