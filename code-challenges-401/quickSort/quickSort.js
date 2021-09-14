@@ -32,7 +32,6 @@ function quickSort(items, left, right) {
             quickSort(items, left, index - 1);
         }
         if (index < right) {
-            //more elements on the right side of the pivot
             quickSort(items, index, right);
         }
     }
