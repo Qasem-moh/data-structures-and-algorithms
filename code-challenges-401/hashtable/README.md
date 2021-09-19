@@ -1,6 +1,5 @@
 # Hash Table
 
-<!-- [**Hash Table**](./hash-table.js) -->
 
 **Challenge**:
   - Create a **HashTable** with `hash`, `set`, `get` and `includes` methods
@@ -12,4 +11,3 @@
 
 *run: npm test hash-table*
 
-<!-- ![hashTable img](../../assets/hash-table.png) -->

@@ -17,9 +17,9 @@ class linkedList {
         } else {
             let currentNode = this.head;
             while (currentNode.next) {
-                currentNode = currentNode.next; 
+                currentNode = currentNode.next;
             }
-            currentNode.next = node; 
+            currentNode.next = node;
         }
     }
     insertAfter(value, newVal) {
